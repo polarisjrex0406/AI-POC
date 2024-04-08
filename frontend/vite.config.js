@@ -14,7 +14,8 @@ export default ({ mode }) => {
   const config = {
     plugins: [react()],
     resolve: {
-      base: '/',
+      // base: '/',
+      base: process.env.VITE_BASE_PATH || '/',
       alias: {
         '@': path.resolve(__dirname, 'src'),
       },

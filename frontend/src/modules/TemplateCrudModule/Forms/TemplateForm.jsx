@@ -193,15 +193,15 @@ function LoadTemplateForm({ subTotal = 0, current = null }) {
             <Input placeholder="Cache Timeout Value" />
           </Form.Item>
         </Col>
-      {/* Description */}
-      <Col className="gutter-row" span={24}>
-        <Form.Item
+        {/* Description */}
+        <Col className="gutter-row" span={24}>
+          <Form.Item
             label={translate('cacheDescription')}
             name="cacheDescription"
           >
-          <TextArea placeholder="Description" />
-        </Form.Item>
-      </Col>
+            <TextArea placeholder="Description" />
+          </Form.Item>
+        </Col>
       </Row>
       {/* Setting Conditions */}
       <Form.List name="cacheConditions">

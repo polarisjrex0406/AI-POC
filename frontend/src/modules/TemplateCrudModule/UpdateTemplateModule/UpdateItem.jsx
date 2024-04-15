@@ -52,13 +52,11 @@ export default function UpdateItem({ config, UpdateForm }) {
     promptEnhancers: [],
     prompt_output: '',
     chatgptSettings: [],
-    retentionSettings: {
-      useCache: false,
-      cacheTimeoutUnit: null,
-      cacheTimeoutValue: 0,
-      cacheConditions: [],
-      description: '',
-    },
+    useCache: false,
+    cacheTimeoutUnit: null,
+    cacheTimeoutValue: 0,
+    cacheConditions: [],
+    description: ''
   };
 
   const [currentErp, setCurrentErp] = useState(current ?? resetErp);

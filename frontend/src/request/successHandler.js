@@ -33,6 +33,8 @@ const successHandler = (response, options = { notifyOnSuccess: false, notifyOnFa
       });
     }
   }
+
+  return null;
 };
 
 export default successHandler;

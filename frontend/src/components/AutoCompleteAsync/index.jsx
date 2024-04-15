@@ -41,7 +41,9 @@ export default function AutoCompleteAsync({
     // setCurrentValue(value[outputValue] || value); // set nested value or value
     // onChange(newValue[outputValue] || newValue);
     if (onChange) {
-      if (newValue) onChange(newValue[outputValue] || newValue);
+      if (newValue) {
+        onChange(newValue[outputValue] || newValue);
+      }
     }
     if (newValue === 'redirectURL' && withRedirect) {
       navigate(urlToRedirect);
@@ -103,6 +105,10 @@ export default function AutoCompleteAsync({
   }, [isSuccess, result]);
   useEffect(() => {
     // this for update Form , it's for setField
+    console.log('value:');
+    console.log(value);
+    console.log('isUpdating:');
+    console.log(isUpdating);
     if (value && isUpdating.current) {
       setOptions([value]);
       setCurrentValue(value[outputValue] || value); // set nested value or value
@@ -129,7 +135,7 @@ export default function AutoCompleteAsync({
       }}
       onChange={handleSelectChange}
       style={{ minWidth: '220px' }}
-      // onSelect={handleOnSelect}
+    // onSelect={handleOnSelect}
     >
       {selectOptions.map((optionField) => (
         <Select.Option

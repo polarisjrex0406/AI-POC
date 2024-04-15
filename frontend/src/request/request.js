@@ -12,14 +12,6 @@ const request = {
     try {
       const response = await axios.post(entity + '/create', jsonData);
 
-      console.log('get:');
-      console.log('url:');
-      console.log(entity + '/create');
-      console.log('request:');
-      console.log(jsonData);
-      console.log('response:');
-      console.log(response);
-
       successHandler(response, {
         notifyOnSuccess: true,
         notifyOnFailed: true,
@@ -52,6 +44,7 @@ const request = {
         notifyOnSuccess: false,
         notifyOnFailed: true,
       });
+
       return response.data;
     } catch (error) {
       return errorHandler(error);
@@ -146,14 +139,6 @@ const request = {
       query = query.slice(0, -1);
 
       const response = await axios.get(entity + '/list' + query);
-
-      console.log('get:');
-      console.log('url:');
-      console.log(entity + '/list' + query);
-      console.log('request:');
-      console.log(' ');
-      console.log('response:');
-      console.log(response);
 
       successHandler(response, {
         notifyOnSuccess: false,

@@ -187,20 +187,15 @@ export default function ReadItem({ config, selectedItem }) {
       name: '',
     },
     prompt_output: '',
-    retentionSettings: {
-      useCache: false,
-      cacheTimeoutUnit: null,
-      cacheTimeoutValue: 0,
-      cacheConditions: [],
-      description: '',
-    },
+    useCache: false,
+    cacheTimeoutUnit: null,
+    cacheTimeoutValue: 0,
+    cacheConditions: [],
+    description: ''
   };
 
   const [currentErp, setCurrentErp] = useState(selectedItem ?? resetErp);
   const [promptEnhancers, setPromptEnhancers] = useState([]);
-  const [criteria, setCriteria] = useState({});
-  const [retentionSettings, setRetentionSettings] = useState({});
-
 
   useEffect(() => {
     if (currentResult) {
@@ -209,17 +204,10 @@ export default function ReadItem({ config, selectedItem }) {
       if (promptEnhancerItems) {
         setPromptEnhancers(promptEnhancerItems);
       }
-      if (criteriaItems) {
-        setCriteria(criteriaItems);
-      }
-      if (retentionSettingItems) {
-        setRetentionSettings(retentionSettingItems);
-      }
       setCurrentErp(currentResult);
     }
     return () => {
       setPromptEnhancers([]);
-      setCriteria({});
       setCurrentErp(resetErp);
     };
   }, [currentResult]);
@@ -394,19 +382,19 @@ export default function ReadItem({ config, selectedItem }) {
 
       <Descriptions title='Retention Settings'>
         <Descriptions.Item label={translate('Use Cache')}>
-          {currentErp.retentionSettings && currentErp.retentionSettings.useCache.toString()}
+          {currentErp.useCache.toString()}
         </Descriptions.Item>
         <Descriptions.Item label={translate('Cache Timeout Unit')}>
-          {currentErp.retentionSettings && currentErp.retentionSettings.cacheTimeoutUnit}
+          {currentErp.cacheTimeoutUnit}
         </Descriptions.Item>
         <Descriptions.Item label={translate('Cache Timeout Value')}>
-          {currentErp.retentionSettings && currentErp.retentionSettings.cacheTimeoutValue}
+          {currentErp.cacheTimeoutValue}
         </Descriptions.Item>
         <Descriptions.Item label={translate('Cache Description')}>
-          {currentErp.retentionSettings && currentErp.retentionSettings.description}
+          {currentErp.description}
         </Descriptions.Item>
       </Descriptions>
-      {currentErp.retentionSettings && currentErp.retentionSettings.useCache && currentErp.retentionSettings.cacheConditions.map((item) => (
+      {currentErp.useCache && currentErp.cacheConditions.map((item) => (
         <CacheConditionItem key={item._id} item={item} currentErp={currentErp} />
       ))}
 

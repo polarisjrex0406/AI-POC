@@ -13,24 +13,9 @@ import useResponsive from '@/hooks/useResponsive';
 import {
   ExperimentOutlined,
   RocketOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-
   SettingOutlined,
-  CustomerServiceOutlined,
-  ContainerOutlined,
-  FileSyncOutlined,
   DashboardOutlined,
-  TagOutlined,
-  TagsOutlined,
-  UserOutlined,
-  CreditCardOutlined,
   MenuOutlined,
-  FileOutlined,
-  ShopOutlined,
-  FilterOutlined,
-  WalletOutlined,
-  ReconciliationOutlined,
 } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { selectLangDirection } from '@/redux/translate/selectors';
@@ -118,7 +103,6 @@ function Sidebar({ collapsible, isMobile = false }) {
       width={256}
       style={{
         overflow: 'auto',
-        // height: '100vh',
         direction:langDirection,
         position:isMobile?"absolute":"relative",
         bottom: '20px',

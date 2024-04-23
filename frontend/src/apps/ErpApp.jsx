@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState, createContext } from 'react';
+import { useLayoutEffect } from 'react';
 import { useEffect } from 'react';
 import { selectAppSettings } from '@/redux/settings/selectors';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import { Layout } from 'antd';
 import { useAppContext } from '@/context/appContext';
 
 import Navigation from '@/apps/Navigation/NavigationContainer';
-import ExpensesNav from '@/apps/Navigation/ExpensesNav';
 import HeaderContent from '@/apps/Header/HeaderContainer';
 import PageLoader from '@/components/PageLoader';
 
@@ -54,7 +53,6 @@ export default function ErpCrmApp() {
   if (settingIsloaded)
     return (
       <Layout hasSider style={{ flexDirection: langDirection === 'rtl' ? 'row-reverse' : 'row' }}>
-        {/* {currentApp === 'default' ? <Navigation /> : <ExpensesNav />} */}
         <Navigation />
 
         {isMobile ? (
@@ -75,7 +73,6 @@ export default function ErpCrmApp() {
         ) : (
           <Layout>
             <HeaderContent />
-            {/* <HeaderContent /> */}
             <Content
               style={{
                 margin: '40px auto 30px',

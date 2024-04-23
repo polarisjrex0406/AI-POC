@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense } from 'react';
 
 import { useSelector } from 'react-redux';
 import { selectAuth } from '@/redux/auth/selectors';
@@ -6,7 +6,6 @@ import { AppContextProvider } from '@/context/appContext';
 import PageLoader from '@/components/PageLoader';
 import AuthRouter from '@/router/AuthRouter';
 import Localization from '@/locale/Localization';
-import { notification } from 'antd';
 
 const ErpApp = lazy(() => import('./ErpApp'));
 

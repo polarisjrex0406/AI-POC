@@ -1,21 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Avatar, Dropdown, Layout, Input } from 'antd';
-import SearchItem from '@/components/SearchItem';
+import { Avatar, Dropdown, Layout } from 'antd';
 
-// import Notifications from '@/components/Notification';
-
-import { SettingOutlined, LogoutOutlined, AppstoreOutlined, ToolOutlined, UserOutlined } from '@ant-design/icons';
+import { LogoutOutlined } from '@ant-design/icons';
 
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 
 import { FILE_BASE_URL } from '@/config/serverApiConfig';
 
 import useLanguage from '@/locale/useLanguage';
-import SelectLanguage from '@/components/SelectLanguage';
-
-import UpgradeButton from './UpgradeButton';
-import AppsButton from './AppsButton';
 import { selectLangDirection } from '@/redux/translate/selectors';
 
 export default function HeaderContent() {
